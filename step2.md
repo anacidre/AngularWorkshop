@@ -192,10 +192,14 @@ Finally let's modify the file app.component.html to reference the coffee-menu co
 ```
 
 
-Add a background colour to the app in app/styles.css:
-
+Add a background colour to the app in app/styles.css. We are also going to prepare the app for the footer:
 ```
+html {
+  position: relative;
+  min-height: 100%;
+}
 body {
   background-color: rgba(252, 235, 182, 0.28);
+  margin: 0 0 70px; /* bottom = footer height */
 }
 ```
