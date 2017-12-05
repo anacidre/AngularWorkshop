@@ -7,7 +7,7 @@ npm install -g @angular/cli
 ```
 
 Now we can generate our fist Angular Project using Angular-CLI.
-Fist let's create a folder where we'll keep the examples that will be developed at this workshop. So choose your favorite location and type:
+First let's create a folder where we will keep the examples that will be developed at this workshop. So choose your favorite location and type:
 
 ```
 mkdir angular-workshop
