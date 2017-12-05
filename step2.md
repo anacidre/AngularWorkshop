@@ -131,7 +131,7 @@ coffee-menu.component.scss
 .coffee-menu {
   margin: 5% 10%;
   .coffee-tile {
-    background-color: darkorange;
+    background-color: rgba(208,79,2,1);
     border-radius: 1em;
   }
   .coffee-image {
@@ -191,3 +191,11 @@ Finally let's modify the file app.component.html to reference the coffee-menu co
 <coffee-menu></coffee-menu>
 ```
 
+
+Add a background colour to the app in app/styles.css:
+
+```
+body {
+  background-color: rgba(252, 235, 182, 0.28);
+}
+```
