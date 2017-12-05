@@ -4,7 +4,7 @@ You can use Angular event bindings to respond to any DOM event.
 
 Let's add a button to our coffee-menu component, the idea is that when the user clicks on that button the price of that coffee is updated to 0.00.
 
-To do that, we'll add a button in our mat-trid-tile-footer and we'll specify the target when the button is clicked.
+To do that, we'll add a button in our mat-grid-tile and we will specify the target when the button is clicked.
 
 ```
 <div class="coffee-menu">
@@ -23,7 +23,7 @@ To do that, we'll add a button in our mat-trid-tile-footer and we'll specify the
 </div>
 ```
 
-The target will be the method onClick that is defined in the coffee-menu.component.ts
+The target will be the onClick method that is defined in the coffee-menu.component.ts
 
 ```
 onClick(index) {
@@ -32,7 +32,7 @@ onClick(index) {
 ```
 
 But that is not really what we want to do, we want to be able to specify how many coffees the user want to order.
-To do so, let's add first the property quantity to the class Coffee.
+To do so, let's first add the property quantity to the coffee-class.ts:
 
 ```
 export class Coffee {
