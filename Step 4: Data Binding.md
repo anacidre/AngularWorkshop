@@ -4,7 +4,7 @@ You can use Angular event bindings to respond to any DOM event.
 
 Let's add a button to our coffee-menu component, the idea is that when the user clicks on that button the price of that coffee is updated to 0.00.
 
-To do that, we'll add a button in our mat-grid-tile and we will specify the target when the button is clicked.
+To do that, we'll add a button in our mat-grid-tile and we will specify the target when the button is clicked. We also need to add an index to our ngFor:
 
 ```
 <div class="coffee-menu">
