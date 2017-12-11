@@ -9,13 +9,18 @@ To do that, we'll add a button in our mat-grid-tile and we will specify the targ
 ```
 <div class="coffee-menu">
   <mat-grid-list cols="2" rowHeight="2:1" gutterSize="20px">
-    <mat-grid-tile class="coffee-tile" *ngFor="let coffee of coffees">
+    <mat-grid-tile class="coffee-tile" *ngFor="let coffee of coffees; let i=index">
       <div class="coffee-image">
         <img src={{coffee.image}} alt={{coffee.name}}>
       </div>
       <div class="coffee-text">
         <h2 mat-line>{{coffee.name}}</h2>
         <span mat-line>Price: {{coffee.price}}</span>
+        <div>
+          <mat-form-field color="accent">
+            <input matInput type=number max="10" title="quantity" placeholder="quantity" #order>
+          </mat-form-field>
+        </div>
         <button mat-icon-button (click)="onClick(i)">FREE</button>
       </div>
     </mat-grid-tile>
@@ -42,31 +47,68 @@ export class Coffee {
   quantity: number;
 }
 ```
+We now need to add a quantity to our array of coffees in coffee-menu.component.ts:
+
+```
+ coffees: Coffee[] = [
+    {
+      name: 'Flat white',
+      image: '/assets/images/flatWhite.png',
+      price: 1.50,
+      quantity: 0,
+    },
+    {
+      name: 'Capuccino',
+      image: '/assets/images/capuccino.png',
+      price: 2.50,
+      quantity: 0,
+    },
+    {
+      name: 'Caramel Machiato',
+      image: '/assets/images/caramelMachiato.png',
+      price: 3.00,
+      quantity: 0,
+    },
+    {
+      name: 'Expresso',
+      image: '/assets/images/expresso.png',
+      price: 2.50,
+      quantity: 0,
+    }
+  ];
+```
+
 
 Amend the file coffee-menu.component.html to add an input where the user can introduce the amount of coffees to order and change the button name.
 
 ```
 <div class="coffee-menu">
   <mat-grid-list cols="2" rowHeight="2:1" gutterSize="20px">
-    <mat-grid-tile class="coffee-tile" *ngFor="let coffee of coffees">
+    <mat-grid-tile class="coffee-tile" *ngFor="let coffee of coffees; let i=index">
       <div class="coffee-image">
         <img src={{coffee.image}} alt={{coffee.name}}>
       </div>
       <div class="coffee-text">
         <h2 mat-line>{{coffee.name}}</h2>
         <span mat-line>Price: {{coffee.price}}</span>
-        <input type=number max="10" #order>
-        <button mat-icon-button (click)="onClick(i, order.value)">DONE</button>
+        <div>
+          <mat-form-field color="accent">
+            <input matInput type=number max="10" title="quantity" placeholder="quantity" #order>
+          </mat-form-field>
+        </div>
+        <button mat-button (click)="onClick(i, order.value)">DONE</button>
       </div>
     </mat-grid-tile>
   </mat-grid-list>
 </div>
-<app-order></app-order>
+<app-order [totalOrder]="total"></app-order>
 ```
 
 Now we need to re-implement the behaviour when the user clicks on the DONE button:
 
 ```
+total: number = 0;
+
 onClick(index, order) {
   this.coffees[index].quantity = order;
   for (let coffee of this.coffees) {
@@ -97,22 +139,3 @@ export class OrderComponent implements OnInit {
 }
 ```
 
-And specify the value that we want to send in the coffee-menu.component.html:
-
-```
-import { Component, OnInit, Input } from '@angular/core';
-
-@Component({
-  selector: 'app-order',
-  templateUrl: './order.component.html',
-  styleUrls: ['./order.component.scss']
-})
-export class OrderComponent implements OnInit {
-  @Input() totalOrder: number;
-
-  constructor() { }
-
-  ngOnInit() {
-  }
-}
-```
