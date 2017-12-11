@@ -1,17 +1,47 @@
-## Setting up our coffee menu - Our first component
+## Setting up our coffee menu 
 
-Now that we have set up our first Angular app, we will start making changes to develop our Hipster Coffee web.
+Now that we have set up our first Angular app, we will start making changes to develop Coffee app.
 
-We will start developing our app, for now we will focus just on the menu that shows the different types of coffee that can be ordered from the store. To do that we will create a new component from scratch.
+We will start developing our app, for now we will focus just on the menu that shows the different types of coffee that can be ordered from the store. 
 
 At the end of this section we will have built the skeleton for the section highlighted in blue below:
 
 ![picture](https://github.com/Vero333/angularWorkshopGuide/blob/master/guideResources/images/coffe-order-app.jpg)
 
+Apps are a representation of the data we can supply and send to our users, and our users can engage with our app to send us data back to a server, for example. 
 
-We can use angular CLI to help us to create an Angular component (which we will do that later) but as this is the first time you we are building a component we will do it from scratch to understand the structure properly.
+1. Here’s the data set we’ll be using:
 
-But before that let's create the Coffee class:
+```
+coffees: Coffee[] = [
+    {
+      name: 'Flat white',
+      image: '/assets/images/flatWhite.png',
+      price: 1.50
+    },
+    {
+      name: 'Capuccino',
+      image: '/assets/images/capuccino.png',
+      price: 2.50
+    },
+    {
+      name: 'CaramelMachiato',
+      image: '/assets/images/caramelMachiato.png',
+      price: 3.00
+    },
+    {
+      name: 'Expresso',
+      image: '/assets/images/expresso.png',
+      price: 2.50
+    }
+  ];
+```
+
+We need to add this data to a component.
+
+We can use angular CLI to help us to create an Angular component (which we will do that later) but as this is the first time you are building a component we will do it from scratch to understand the structure properly.
+
+But just before that let's create the Coffee class:
 
 Create a folder named shared under the coffee-order-app/src/app/ folder:
 
@@ -56,7 +86,7 @@ Inside of this folder we need to create three files:
 * coffee-menu.component.scss: style
 
 
-coffee-menu.component.ts:
+We now add our data to our coffee-menu.component.ts:
 
 ```
 import { Component, OnInit } from '@angular/core';
@@ -197,7 +227,7 @@ Finally let's modify the file app.component.html to reference the coffee-menu co
 ```
 
 
-Add a background colour, an anagular material theme and the Google Fonts that we will be using to the app in app/styles.css. We are also going to prepare the app for the footer:
+Add a background colour, an angular material theme and the Google Fonts that we will be using to the app in app/styles.css. We are also going to prepare the app for the footer:
 ```
 @import '~@angular/material/prebuilt-themes/pink-bluegrey.css';
 @import url('https://fonts.googleapis.com/css?family=Pacifico');
