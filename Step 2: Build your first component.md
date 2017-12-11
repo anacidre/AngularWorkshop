@@ -197,8 +197,11 @@ Finally let's modify the file app.component.html to reference the coffee-menu co
 ```
 
 
-Add a background colour to the app in app/styles.css. We are also going to prepare the app for the footer:
+Add a background colour, an anagular material theme and the Google Fonts that we will be using to the app in app/styles.css. We are also going to prepare the app for the footer:
 ```
+@import '~@angular/material/prebuilt-themes/pink-bluegrey.css';
+@import url('https://fonts.googleapis.com/css?family=Pacifico');
+
 html {
   position: relative;
   min-height: 100%;
@@ -207,4 +210,5 @@ body {
   background-color: rgba(252, 235, 182, 0.28);
   margin: 0 0 70px; /* bottom = footer height */
 }
+
 ```
