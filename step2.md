@@ -147,8 +147,13 @@ coffee-menu.component.scss
     color: #ffffff;
     font-family: Verdana, sans-serif;
     h2{
-      font-size: 1.5em;
+      font-family: Pacifico, sans-serif;
+      font-size: 2em;
       text-align: left;
+      font-weight: 400;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      margin: 0 0 0.4em 0;
     }
   }
 }
