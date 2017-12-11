@@ -137,7 +137,7 @@ npm install @angular/material@latest --save
 npm install @angular/cdk@latest --save
 ```
 
-coffee-menu.component.html
+Now in the coffee-menu.component.html we will add a grid list and most importantly a ngFor which is the Angular "repeater" directive. Anything you see in double curly braces are called Interpolation. They are property bindings, they allow us to access the string value of the corresponding component property.
 
 ```
 <div class="coffee-menu">
@@ -155,7 +155,7 @@ coffee-menu.component.html
 </div>
 ```
 
-coffee-menu.component.scss
+Inside coffee-menu.component.scss we will add the necessary styles for this part of the guide.
 
 ```
 .coffee-menu {
@@ -190,7 +190,7 @@ coffee-menu.component.scss
 
 ```
 
-Now we need to modify the file app.module.ts
+Now we need to modify the file app.module.ts to add the angular material elements which will be used for this workshop
 
 ```
 import { BrowserModule } from '@angular/platform-browser';
@@ -198,20 +198,28 @@ import { NgModule } from '@angular/core';
 
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatGridListModule } from '@angular/material/grid-list';
+import { MatButtonModule } from '@angular/material/button';
+import { MatInputModule } from '@angular/material/input';
+import { MatFormFieldModule } from '@angular/material/form-field';
 
 import { AppComponent } from './app.component';
-
 import { CoffeeMenuComponent } from './coffee-menu/coffee-menu.component';
+import { OrderComponent } from './order/order.component';
+
 
 @NgModule({
   declarations: [
     AppComponent,
-    CoffeeMenuComponent
+    CoffeeMenuComponent,
+    OrderComponent
   ],
   imports: [
     BrowserModule,
+    MatGridListModule,
     BrowserAnimationsModule,
-    MatGridListModule
+    MatButtonModule,
+    MatInputModule,
+    MatFormFieldModule
   ],
   providers: [],
   bootstrap: [AppComponent]
