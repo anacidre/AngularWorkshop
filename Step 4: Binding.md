@@ -85,7 +85,7 @@ Amend the file coffee-menu.component.html to add an input where the user can int
         <span mat-line>Price: {{coffee.price}}</span>
         <div>
           <mat-form-field color="accent">
-            <input matInput type=number max="10" title="quantity" placeholder="quantity" #order>
+            <input matInput type=number max="10" min="0" title="quantity" placeholder="quantity" #order>
           </mat-form-field>
         </div>
         <button mat-button (click)="onClick(i, order.value)">DONE</button>
