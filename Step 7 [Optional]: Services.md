@@ -61,7 +61,7 @@ We now go back to our coffee-types.component.ts, delete that array from there an
 Before moving forward we need to import the CoffeeTypesService into the coffee-menu.component.ts component:
 
 ```
-import { CoffeeTypesService } from '/src/app/coffee-types.service';
+import { CoffeeTypesService } from '.././coffee-types.service';
 ```
 
 We will now add to our constructor the coffee array like this:
