@@ -85,3 +85,4 @@ Add finally change the styles in the order.component.scss:
   }
 }
 ```
+<blockquote class="imgur-embed-pub" lang="en" data-id="YsbKHg1"><a href="//imgur.com/YsbKHg1">improved magic gif</a></blockquote><script async src="//s.imgur.com/min/embed.js" charset="utf-8"></script>
