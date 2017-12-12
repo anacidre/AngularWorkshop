@@ -78,10 +78,12 @@ Add finally change the styles in the order.component.scss:
   overflow:hidden;
   h3{
     text-align: right;
-    margin-right: 5em;
+    margin: 0.2em 5em 0 0;
     color: #FFFFFF;
-    font-size: 1.5em;
-    font-family: sans-serif;
+    font-size: 2em;
+    font-family: Pacifico, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
   }
 }
 ```
