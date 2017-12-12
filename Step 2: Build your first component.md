@@ -47,7 +47,7 @@ mkdir coffee-interface
 cd coffee-interface
 ```
 
-This folder will contain the definition of the Coffee class. We create the file coffee-class.ts and add the class:
+This folder will contain the definition of the Coffee class. We create the file coffee.model.ts and add the class:
 
 ```
 export interface Coffee {
@@ -90,7 +90,7 @@ We now add our data to our coffee-menu.component.ts, to do so we need to import 
 ```
 import { Component, OnInit } from '@angular/core';
 
-import { Coffee } from '../coffee-class/coffee-class';
+import { Coffee } from '../coffee-interface/coffee.model';
 
 ```
 Underneath we need to add the component decorator to provide information for Angular to know what to do with the class.
@@ -140,7 +140,6 @@ So the coffee-menu.component.ts should look like this:
 ```
 import { Component, OnInit } from '@angular/core';
 
-import { Coffee } from '../coffee-class/coffee-class';
 
 @Component({
   selector: 'coffee-menu',
