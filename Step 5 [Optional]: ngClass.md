@@ -17,3 +17,4 @@ We now need to add these classes to our coffee-menu.component.scss file like thi
       background-color: #71dad1;
     }
 ```
+<a href="https://github.com/anacidre/AngularWorkshop/blob/master/Step%206%20%5BOptional%5D:%20Pipes.md">Next: Step 6 [Optional]</a>
