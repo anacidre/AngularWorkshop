@@ -6,7 +6,7 @@ We will start developing our app, for now we will focus just on the menu that sh
 
 At the end of this section we will have built the skeleton for the section highlighted in blue below:
 
-![picture](https://github.com/Vero333/angularWorkshopGuide/blob/master/guideResources/images/coffe-order-app.jpg)
+<img src="https://github.com/anacidre/AngularWorkshop/blob/master/assets/coffee-app-menu-selection.jpg">
 
 Apps are a representation of the data we can supply and send to our users, and our users can engage with our app to send us data back to a server, for example. 
 
