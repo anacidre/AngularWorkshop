@@ -37,18 +37,14 @@ coffees: Coffee[] = [
   ];
 ```
 
-We need to add this data to a component.
+We need to add this data to a component. But just before that let's create the Coffee class:
 
-We can use angular CLI to help us to create an Angular component (which we will do that later) but as this is the first time you are building a component we will do it from scratch to understand the structure properly.
-
-But just before that let's create the Coffee class:
-
-Create a folder named shared under the coffee-order-app/src/app/ folder:
+Create a folder named 'coffee-class' under the coffee-order-app/src/app/ folder:
 
 ```
 cd coffee-order-app/src/app/
-mkdir shared
-cd shared
+mkdir coffee-class
+cd coffee-class
 ```
 
 This folder will contain the definition of the Coffee class. We create the file coffee-class.ts and add the class:
@@ -68,10 +64,13 @@ cd coffee-order-app/src/assets
 mkdir images
 ```
 
-And save the images there.
-Markup :  [coffeImages.zip](https://github.com/Vero333/angularWorkshopGuide/raw/master/guideResources/images/coffeeImages.zip)
+And save (or move) the images there.
+Markup :  [coffeImages.zip](https://github.com/anacidre/AngularWorkshop/blob/master/assets/coffeeImages.zip)
 
 Now we are ready to start with our coffee-menu component.
+
+We can use angular CLI to help us to create an Angular component (which we will do later) but as this is the first time you are building a component we will do it from scratch to understand the structure properly.
+
 First let's create the folder that will contain it. The folder name will match the component name and it should be located at coffee-order-app/src/app/:
 
 ```
@@ -86,12 +85,62 @@ Inside of this folder we need to create three files:
 * coffee-menu.component.scss: style
 
 
-We now add our data to our coffee-menu.component.ts:
+We now add our data to our coffee-menu.component.ts, to do so we need to import the component and OnInit interfaces from angular/core. We also need to import the coffee class that we just created:
 
 ```
 import { Component, OnInit } from '@angular/core';
 
-import { Coffee } from '../shared/coffee';
+import { Coffee } from '../coffee-class/coffee-class';
+
+```
+Underneath we need to add the component decorator to provide information for Angular to know what to do with the class.
+```
+@Component({
+  selector: 'coffee-menu',
+  templateUrl: './coffee-menu.component.html',
+  styleUrls: ['./coffee-menu.component.scss']
+})
+```
+Next we need to export the class which will implement the lifecycle hook OnInit (we will go deeper into this on step 7):
+
+```
+export class CoffeeMenuComponent implements OnInit {
+
+  coffees: Coffee[] = [
+    {
+      name: 'Flat white',
+      image: '/assets/images/flatWhite.png',
+      price: 1.50
+    },
+    {
+      name: 'Capuccino',
+      image: '/assets/images/capuccino.png',
+      price: 2.50
+    },
+    {
+      name: 'CaramelMachiato',
+      image: '/assets/images/caramelMachiato.png',
+      price: 3.00
+    },
+    {
+      name: 'Expresso',
+      image: '/assets/images/expresso.png',
+      price: 2.50
+    }
+  ];
+
+  constructor() { }
+
+  ngOnInit() { }
+}
+```
+
+So the coffee-menu.component.ts should look like this:
+
+```
+import { Component, OnInit } from '@angular/core';
+
+import { Coffee } from '../coffee-class/coffee-class';
 
 @Component({
   selector: 'coffee-menu',
@@ -129,15 +178,84 @@ export class CoffeeMenuComponent implements OnInit {
   ngOnInit() { }
 }
 ```
+We now add this component to our module. Go to coffee-app/src/app app.module.ts and import the coffeMenuComponent:
+```
+import { CoffeeMenuComponent } from './coffee-menu/coffee-menu.component';
 
+```
+And add it to declarations:
+```
+ declarations: [
+    AppComponent,
+    CoffeeMenuComponent
+  ],
+```
 In our template we'll be using angular material, it needs to be installed using the command specified below:
 
 ```
 npm install @angular/material@latest --save
 npm install @angular/cdk@latest --save
 ```
+We now need to add Angular material to our module. So just where we were in app.module.ts we need to import: 
+```
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MatGridListModule } from '@angular/material/grid-list';
+import { MatButtonModule } from '@angular/material/button';
+import { MatInputModule } from '@angular/material/input';
+import { MatFormFieldModule } from '@angular/material/form-field';
+```
+and add these to imports:
 
-Now in the coffee-menu.component.html we will add a grid list and most importantly a ngFor which is the Angular "repeater" directive. Anything you see in double curly braces are called Interpolation. They are property bindings, they allow us to access the string value of the corresponding component property.
+```
+ imports: [
+    BrowserModule,
+    MatGridListModule,
+    BrowserAnimationsModule,
+    MatButtonModule,
+    MatInputModule,
+    MatFormFieldModule
+  ],
+  
+```
+
+You app.module.ts file should look like this:
+
+```
+import { BrowserModule } from '@angular/platform-browser';
+import { NgModule } from '@angular/core';
+
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MatGridListModule } from '@angular/material/grid-list';
+import { MatButtonModule } from '@angular/material/button';
+import { MatInputModule } from '@angular/material/input';
+import { MatFormFieldModule } from '@angular/material/form-field';
+
+import { AppComponent } from './app.component';
+import { CoffeeMenuComponent } from './coffee-menu/coffee-menu.component';
+
+
+@NgModule({
+  declarations: [
+    AppComponent,
+    CoffeeMenuComponent,
+  ],
+  imports: [
+    BrowserModule,
+    MatGridListModule,
+    BrowserAnimationsModule,
+    MatButtonModule,
+    MatInputModule,
+    MatFormFieldModule
+  ],
+  providers: [],
+  bootstrap: [AppComponent]
+})
+export class AppModule { }
+```
+So what are all these Modules we just added? Check them out in <a href="https://material.angular.io/">Angular Material</a>.
+
+
+Now in the coffee-menu.component.html we will add a grid list and most importantly a ngFor which is the Angular "repeater" directive. Anything you see in double curly braces {{coffee.name}} are called Interpolations. They are property bindings, which allow us to access the string value of the corresponding component property.
 
 ```
 <div class="coffee-menu">
@@ -190,52 +308,17 @@ Inside coffee-menu.component.scss we will add the necessary styles for this part
 
 ```
 
-Now we need to modify the file app.module.ts to add the angular material elements which will be used for this workshop
-
-```
-import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
-
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { MatGridListModule } from '@angular/material/grid-list';
-import { MatButtonModule } from '@angular/material/button';
-import { MatInputModule } from '@angular/material/input';
-import { MatFormFieldModule } from '@angular/material/form-field';
-
-import { AppComponent } from './app.component';
-import { CoffeeMenuComponent } from './coffee-menu/coffee-menu.component';
-import { OrderComponent } from './order/order.component';
-
-
-@NgModule({
-  declarations: [
-    AppComponent,
-    CoffeeMenuComponent,
-    OrderComponent
-  ],
-  imports: [
-    BrowserModule,
-    MatGridListModule,
-    BrowserAnimationsModule,
-    MatButtonModule,
-    MatInputModule,
-    MatFormFieldModule
-  ],
-  providers: [],
-  bootstrap: [AppComponent]
-})
-export class AppModule { }
-
-```
-
-Finally let's modify the file app.component.html to reference the coffee-menu component:
+Finally let's modify the file app.component.html to reference the coffee-menu component (we can delete everything that is in there):
 
 ```
 <coffee-menu></coffee-menu>
 ```
 
+Let's see where we are with our app and serve it.
 
-Add a background colour, an angular material theme and the Google Fonts that we will be using to the app in app/styles.css. We are also going to prepare the app for the footer:
+GREAT! Let's add some finishin touches:
+
+Add a background colour, an angular material theme and the Google Fonts that we will be using to the app in app/styles.css. We are also going to prepare the app for the footer (you will find this is coffee-menu/src/app):
 ```
 @import '~@angular/material/prebuilt-themes/pink-bluegrey.css';
 @import url('https://fonts.googleapis.com/css?family=Pacifico');
