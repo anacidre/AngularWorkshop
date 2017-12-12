@@ -3,7 +3,7 @@
 Once we have clicked done we want the button color to change to know which coffee we have already ordered. We do this by adding an ngClass to the button like this: 
 
 ```
-<button mat-button (click)="onClick(i, order.value)" [ngClass]="{'not-checked': !coffee.quantity , 'checked' : coffee.quantity}" >DONE</button>
+<button mat-button (click)="onClick(i, order.value)" [class.checked]="coffee.quantity" >DONE</button>
 ```
 
 We now need to add these classes to our coffee-menu.component.scss file like this:
