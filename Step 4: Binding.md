@@ -29,10 +29,10 @@ onClick(index) {
 ```
 
 But that is not really what we want to do, we want to be able to specify how many coffees the user want to order.
-To do so, let's first add the property quantity to the coffee-class.ts:
+To do so, let's first add the property quantity to the coffee.model.ts:
 
 ```
-export class Coffee {
+export interface Coffee {
   name: string;
   image: string;
   price: number;
