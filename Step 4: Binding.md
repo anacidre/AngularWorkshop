@@ -99,11 +99,17 @@ Amend the file coffee-menu.component.html to add an input where the user can int
 Now we need to add `[totalOrder]="total"` to our <app-total-order> component like this:
 
 ```
-<app-total-order></app-total-order>
+<app-total-order [totalOrder]="total"></app-total-order>
 ```
 This is called one way data binding. One way data binding from data source to the view target means that values from the view are not passed back to the component, while any changes made to the expression in the component are reflected in the view - it is one way data binding from data source to the view.
 
 Later on we will see two way data binding.
+
+We then make the button more visible by adding the following to coffee-menu.component.scss:
+```
+.mat-button{
+    background-color: rgba(255, 255, 255, 0.35);
+```
 
 Now we need to re-implement the behaviour when the user clicks on the DONE button:
 
