@@ -85,5 +85,6 @@ Add finally change the styles in the order.component.scss:
   }
 }
 ```
+Angular makes things work easily, it's a bit like:
 
 <img src="https://github.com/anacidre/AngularWorkshop/blob/master/assets/mgc.gif">
