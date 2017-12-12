@@ -93,8 +93,17 @@ Amend the file coffee-menu.component.html to add an input where the user can int
     </mat-grid-tile>
   </mat-grid-list>
 </div>
-<app-total-order [totalOrder]="total"></app-total-order>
+<app-total-order></app-total-order>
 ```
+
+Now we need to add `[totalOrder]="total"` to our <app-total-order> component like this:
+
+```
+<app-total-order></app-total-order>
+```
+This is called one way data binding. One way data binding from data source to the view target means that values from the view are not passed back to the component, while any changes made to the expression in the component are reflected in the view - it is one way data binding from data source to the view.
+
+Later on we will see two way data binding.
 
 Now we need to re-implement the behaviour when the user clicks on the DONE button:
 
@@ -130,7 +139,7 @@ export class OrderComponent implements OnInit {
   }
 }
 ```
-
+What we have done here is one-way data binding. 
 YOU'VE FINISHED
 
 <img src="https://github.com/anacidre/AngularWorkshop/blob/master/assets/minions.gif">
