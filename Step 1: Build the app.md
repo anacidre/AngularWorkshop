@@ -27,3 +27,4 @@ Move to coffee-order-app and start serving your app:
 cd coffee-order-app
 ng serve --open
 ```
+We now have to open up our app in our favourite IDE such as webstorm, VS Code, sublime text, ...
