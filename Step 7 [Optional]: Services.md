@@ -84,5 +84,5 @@ and on our ngOnInit lifecycle hook we will call our getCoffees method
 
 Finally to make this work we need to add our coffee-class.service.ts our Coffee class. We import it:
 ```
-import { Coffee } from '../coffee-class/coffee-class';
+import { Coffee } from '../coffee-interface/coffee.model';
 ```
