@@ -7,25 +7,17 @@ Let's add a button to our coffee-menu component, the idea is that when the user 
 To do that, we'll add a button in our mat-grid-tile and we will specify the target when the button is clicked. We also need to add an index to our ngFor:
 
 ```
-<div class="coffee-menu">
-  <mat-grid-list cols="2" rowHeight="2:1" gutterSize="20px">
+
     <mat-grid-tile class="coffee-tile" *ngFor="let coffee of coffees; let i=index">
       <div class="coffee-image">
-        <img src={{coffee.image}} alt={{coffee.name}}>
-      </div>
-      <div class="coffee-text">
-        <h2 mat-line>{{coffee.name}}</h2>
+       ...
+       
         <span mat-line>Price: {{coffee.price}}</span>
-        <div>
-          <mat-form-field color="accent">
-            <input matInput type=number max="10" title="quantity" placeholder="quantity" #order>
-          </mat-form-field>
-        </div>
-        <button mat-icon-button (click)="onClick(i)">FREE</button>
+        <button mat-button (click)="onClick(i)">FREE</button>
       </div>
-    </mat-grid-tile>
-  </mat-grid-list>
+     </mat-grid-list>
 </div>
+<app-total-order></app-total-order>
 ```
 
 The target will be the onClick method that is defined in the coffee-menu.component.ts
@@ -101,7 +93,7 @@ Amend the file coffee-menu.component.html to add an input where the user can int
     </mat-grid-tile>
   </mat-grid-list>
 </div>
-<app-order [totalOrder]="total"></app-order>
+<app-total-order [totalOrder]="total"></app-total-order>
 ```
 
 Now we need to re-implement the behaviour when the user clicks on the DONE button:
