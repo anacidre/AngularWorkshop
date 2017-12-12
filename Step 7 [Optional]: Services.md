@@ -5,7 +5,7 @@ First we need to add a service. Inside coffee-order-app/src/app we create a file
 export class CoffeeTypesService {
   constructor() {}
 
-  getCoffees() {
+  getCoffees() Coffee[] {
 }
 }
 
