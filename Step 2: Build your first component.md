@@ -37,20 +37,20 @@ coffees: Coffee[] = [
   ];
 ```
 
-We need to add this data to a component. But just before that let's create the Coffee class:
+We need to add this data to a component. But just before that let's create the Coffee interface:
 
-Create a folder named 'coffee-class' under the coffee-order-app/src/app/ folder:
+Create a folder named 'coffee-interface' under the coffee-order-app/src/app/ folder:
 
 ```
 cd coffee-order-app/src/app/
-mkdir coffee-class
-cd coffee-class
+mkdir coffee-interface
+cd coffee-interface
 ```
 
 This folder will contain the definition of the Coffee class. We create the file coffee-class.ts and add the class:
 
 ```
-export class Coffee {
+export interface Coffee {
   name: string;
   image: string;
   price: number;
