@@ -31,4 +31,4 @@ To stop serving use ctrl + c.
 
 We now have to open up our app in our favourite IDE such as webstorm, VS Code, sublime text, ...
 
-<a href="https://github.com/anacidre/AngularWorkshop/blob/master/Step%202:%20Build%20your%20first%20component.md">Next</a>
+<a href="https://github.com/anacidre/AngularWorkshop/blob/master/Step%202:%20Build%20your%20first%20component.md">Next: Step 2</a>
