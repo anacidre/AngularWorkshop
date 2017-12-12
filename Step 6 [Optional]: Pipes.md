@@ -10,3 +10,12 @@ We will try out the uppercase pipe to put the titles of the coffees in uppercase
  <h2 mat-line>{{coffee.name | uppercase}}</h2>
 ```
 
+We'd like to show the currency for the price and total order price, to do so we can use the currency pipe:
+
+```
+<span mat-line>Price: {{coffee.price | currency:'EUR'}}</span>
+```
+
+```
+<app-order [totalOrder]='total  | currency:"EUR"'></app-order>
+```
