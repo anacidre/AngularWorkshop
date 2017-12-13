@@ -1,7 +1,16 @@
-## Bindings
+## Data Bindings
 
-You can use Angular event bindings to respond to any DOM event.
+You can use Angular data bindings to respond to any DOM event. There are four different types of data bindings, one which we have already seen:
 
+- <b>Interpolation:</b> With interpolation you can display a component property. To do so, you put the property name in the view template,       enclosed in double curly braces: `{{coffee.price}}`
+
+- <b>One-way binding:</b> People often describe property binding as one-way data binding because it flows a value in one direction, from a       component's data property into a target element property. Which is what we are going to do next. We use square brackers to access         the property name like this: `[totalOrder]="total"`
+
+- <b>Two-way binding:</b> You often want to both display a data property and update that property when the user makes changes.
+       We can use `[(ngModel)]` or a `#`. We will go more into detail once we get there.
+       
+- <b>Event binding:</b> Users don't just stare at the screen. They enter text into input boxes. They pick items from lists. They click           buttons. Such user actions may result in a flow of data in the opposite direction: from an element to a component. To do this we use       the parenthesis `()` to access a DOM event name. You can see this here: `<button mat-button (click)="onClick(i)">FREE</button>`
+ 
 Let's add a button to our coffee-menu component, the idea is that when the user clicks on that button the price of that coffee is updated to 0.00.
 
 To do that, we'll add a button in our mat-grid-tile and we will specify the target when the button is clicked. We also need to add an index to our ngFor:
@@ -96,7 +105,7 @@ Amend the file coffee-menu.component.html to add an input where the user can int
 <app-total-order></app-total-order>
 ```
 
-Now we need to add `[totalOrder]="total"` to our <app-total-order> component like this:
+Now we need to add our one-way binding `[totalOrder]="total"` to our <app-total-order> component like this:
 
 ```
 <app-total-order [totalOrder]="total"></app-total-order>
