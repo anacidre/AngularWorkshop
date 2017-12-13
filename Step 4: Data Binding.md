@@ -207,12 +207,46 @@ We now have to add this component to our `app.component.html`:
 
 Now we make it look pretty
 ```
-...
-<app-welcome-nav></app-welcome-nav>
-<coffee-menu></coffee-menu>
+.welcome-nav {
+  padding: 0 0 0 20px;
+  color: #d04f02;
+  font-family: Pacifico, sans-serif;
+
+  .username-input {
+    text-align: left;
+    width: 50%;
+    /deep/ .mat-form-field-underline {
+      background-color: #d04f02;
+      width: 50%;
+      .mat-form-field-ripple {
+        background-color: #71dad1;
+      }
+    }
+
+    .orange-underline {
+      width: 25%;
+    }
+  }
+  .username {
+    font-size: 1.5em;
+    line-height: 1.5em;
+    text-align: center;
+  }
+
+  .username-input .username {
+    display: inline-block;
+  }
+
+}
 
 ```
 
+And remove some margin from the coffee-app.component.scss: 
+
+```
+.coffee-menu {
+  margin: 1% 10%;
+```
 YOU'VE FINISHED
 we need to introduce a property binding.
 
