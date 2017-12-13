@@ -156,7 +156,7 @@ export class OrderComponent implements OnInit {
   }
 }
 ```
-###Two-way data binding
+### Two-way data binding
 
 Let's welcome our users! We will add an input box where the user can add his or her name. To do this we will be using two-way data binding.
 
