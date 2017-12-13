@@ -25,7 +25,7 @@ providers: [
 We then go to our coffee-menu.component.ts and copy the array to add it to our coffee-type.service.ts we will add it in the getCoffees function like this:
 
 ```
-  getCoffees() {
+  getCoffees() Coffee[] {
 
     return [
           {
@@ -82,7 +82,7 @@ and on our ngOnInit lifecycle hook we will call our getCoffees method
 
 ```
 
-Finally to make this work we need to add our coffee-class.service.ts our Coffee class. We import it:
+Finally to make this work we need to add our coffee-class.service.ts our Coffee interface. We import it:
 ```
 import { Coffee } from '../coffee-interface/coffee.model';
 ```
