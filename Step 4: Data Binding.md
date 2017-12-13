@@ -13,7 +13,9 @@ You can use Angular data bindings to respond to any DOM event. There are four di
  
 Let's add a button to our coffee-menu component, the idea is that when the user clicks on that button the price of that coffee is updated to 0.00.
 
-To do that, we'll add a button in our mat-grid-tile and we will specify the target when the button is clicked. We also need to add an index to our ngFor:
+### Interpolation and Event binding
+
+We will add a button that uses event binding in our mat-grid-tile and we will specify the target when the button is clicked. We also need to add an index to our ngFor:
 
 ```
 
@@ -28,6 +30,7 @@ To do that, we'll add a button in our mat-grid-tile and we will specify the targ
 </div>
 <app-total-order></app-total-order>
 ```
+We can see that we areusing interpolation ` {{coffee.price}}` to access the price of the coffee. We have seen interpolation in previous steps already.
 
 The target will be the onClick method that is defined in the coffee-menu.component.ts
 
@@ -36,9 +39,10 @@ onClick(index) {
   this.coffees[index].price = 0.00;
 }
 ```
+### One-way data binding
 
 But that is not really what we want to do, we want to be able to specify how many coffees the user want to order.
-To do so, let's first add the property quantity to the coffee.model.ts:
+And to do so we will be using one-way data binding. First let's make some changes in the coffee interface and our coffee array. Add the property quantity to the coffee.model.ts:
 
 ```
 export interface Coffee {
@@ -105,14 +109,12 @@ Amend the file coffee-menu.component.html to add an input where the user can int
 <app-total-order></app-total-order>
 ```
 
-Now we need to add our one-way binding `[totalOrder]="total"` to our <app-total-order> component like this:
+Now we need to add our one-way binding `[totalOrder]="total"` to our `<app-total-order>` component like this:
 
 ```
 <app-total-order [totalOrder]="total"></app-total-order>
 ```
-This is called one way data binding. One way data binding from data source to the view target means that values from the view are not passed back to the component, while any changes made to the expression in the component are reflected in the view - it is one way data binding from data source to the view.
-
-Later on we will see two way data binding.
+One way data binding from a data source to the view target means that values from the view are not passed back to the component, while any changes made to the expression in the component are reflected in the view - it is one way data binding from data source to the view.
 
 We then make the button more visible by adding the following to coffee-menu.component.scss:
 ```
@@ -154,8 +156,65 @@ export class OrderComponent implements OnInit {
   }
 }
 ```
-What we have done here is one-way data binding. 
+###Two-way data binding
+
+Let's welcome our users! We will add an input box where the user can add his or her name. To do this we will be using two-way data binding.
+
+We will be using the `[(ngModel)]` directive to implement this. The `[(ngModel)]` takes care of updating the underlying input DOM  element. 
+
+
+First we will create a component
+
+```
+ng g c welcome-nav  
+```
+
+We add the html to our `welcome-nav.component.html` template:
+```
+<div>
+  Enter your username: <input [(ngModel)]="username">
+  <br/>
+  <span>Welcome {{ username }} !</span>
+</div>
+```
+
+We need to import the `FormsModule` from `@angular/forms` and declare in imports in our app.module.ts:
+
+```
+import { FormsModule } from '@angular/forms';
+
+...
+
+imports: [
+    BrowserModule,
+    MatGridListModule,
+    BrowserAnimationsModule,
+    MatButtonModule,
+    MatInputModule,
+    MatFormFieldModule,
+    FormsModule
+  ],
+  
+```
+
+We now have to add this component to our `app.component.html`:
+```
+...
+<app-welcome-nav></app-welcome-nav>
+<coffee-menu></coffee-menu>
+
+```
+
+Now we make it look pretty
+```
+...
+<app-welcome-nav></app-welcome-nav>
+<coffee-menu></coffee-menu>
+
+```
+
 YOU'VE FINISHED
+we need to introduce a property binding.
 
 <img src="https://github.com/anacidre/AngularWorkshop/blob/master/assets/minions.gif">
 
