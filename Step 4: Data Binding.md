@@ -158,7 +158,9 @@ export class OrderComponent implements OnInit {
 ```
 ### Two-way data binding
 
-Let's welcome our users! We will add an input box where the user can add his or her name. To do this we will be using two-way data binding.
+Let's welcome our users! We will add an input box where the user can add his or her name. To do this we will be using two-way data binding, like this:
+
+<img src="https://github.com/anacidre/AngularWorkshop/blob/master/assets/welcome-nav.jpg">
 
 We will be using the `[(ngModel)]` directive to implement this. The `[(ngModel)]` takes care of updating the underlying input DOM  element. 
 
