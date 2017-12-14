@@ -1,6 +1,6 @@
 ## Setting up our coffee menu 
 
-Now that we have set up our first Angular app, we will start making changes to develop Coffee app.
+Now that we have set up our first Angular app, we will start making changes to develop the coffee app.
 
 We will start developing our app, for now we will focus just on the menu that shows the different types of coffee that can be ordered from the store. 
 
@@ -42,12 +42,12 @@ We need to add this data to a component. But just before that let's create the C
 Create a folder named 'coffee-interface' under the coffee-order-app/src/app/ folder:
 
 ```
-cd coffee-order-app/src/app/
+cd src/app/
 mkdir coffee-interface
 cd coffee-interface
 ```
 
-This folder will contain the definition of the Coffee class. We create the file coffee.model.ts and add the class:
+This folder will contain the definition of the Coffee class. We need to create the file coffee.model.ts inside that folder (we can do that in the IDE) and add the class:
 
 ```
 export interface Coffee {
@@ -57,19 +57,20 @@ export interface Coffee {
 }
 ```
 
-The menu page will have images which will represent the different types of coffee, so let's create the folder where we will put those images:
+The menu page will have images which will represent the different types of coffee, so let's create the folder where we will put those images. Inside:
 
 ```
-cd coffee-order-app/src/assets
-mkdir images
+src/assets
 ```
+
+We create a folder `images`.
 
 And save (or move) the images there.
-Markup :  [coffeImages.zip](https://github.com/anacidre/AngularWorkshop/blob/master/assets/coffeeImages.zip)
+<a href="https://github.com/anacidre/AngularWorkshop/blob/master/assets/coffeeImages.zip">coffeeImages.zip </a>
 
 Now we are ready to start with our coffee-menu component.
 
-We can use angular CLI to help us to create an Angular component (which we will do later) but as this is the first time you are building a component we will do it from scratch to understand the structure properly.
+We can use angular CLI to help us generate an Angular component (which we will do later) but as this is the first time you are building a component we will do it from scratch to understand the structure properly.
 
 First let's create the folder that will contain it. The folder name will match the component name and it should be located at coffee-order-app/src/app/:
 
@@ -79,7 +80,7 @@ mkdir coffee-menu
 cd coffee-menu
 ```
 
-Inside of this folder we need to create three files:
+Inside of this folder we need to create three files (do this in the IDE):
 * coffee-menu.component.ts: controller
 * coffee-menu.component.html: template
 * coffee-menu.component.scss: style
@@ -101,7 +102,7 @@ Underneath we need to add the component decorator to provide information for Ang
   styleUrls: ['./coffee-menu.component.scss']
 })
 ```
-Next we need to export the class which will implement the lifecycle hook OnInit (we will go deeper into this on step 7):
+Next we need to export the class in the same file which will implement the lifecycle hook OnInit (we will go deeper into this on step 7):
 
 ```
 export class CoffeeMenuComponent implements OnInit {
@@ -140,6 +141,8 @@ So the coffee-menu.component.ts should look like this:
 ```
 import { Component, OnInit } from '@angular/core';
 
+import { Coffee } from '../coffee-interface/coffee.model';
+
 
 @Component({
   selector: 'coffee-menu',
@@ -177,7 +180,7 @@ export class CoffeeMenuComponent implements OnInit {
   ngOnInit() { }
 }
 ```
-We now add this component to our module. Go to coffee-app/src/app app.module.ts and import the coffeMenuComponent:
+We now add this component to our module. Go to coffee-app/src/app/ app.module.ts and import the coffeMenuComponent:
 ```
 import { CoffeeMenuComponent } from './coffee-menu/coffee-menu.component';
 
@@ -315,9 +318,9 @@ Finally let's modify the file app.component.html to reference the coffee-menu co
 
 Let's see where we are with our app and serve it.
 
-GREAT! Let's add some finishin touches:
+GREAT! Let's add some finishing touches:
 
-Add a background colour, an angular material theme and the Google Fonts that we will be using to the app in app/styles.css. We are also going to prepare the app for the footer (you will find this is coffee-menu/src/app):
+Add a background colour, an angular material theme and the Google Fonts that we will be using to the app in `app/styles.scss`. We are also going to prepare the app for the footer:
 ```
 @import '~@angular/material/prebuilt-themes/pink-bluegrey.css';
 @import url('https://fonts.googleapis.com/css?family=Pacifico');
