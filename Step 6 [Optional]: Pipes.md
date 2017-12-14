@@ -1,6 +1,6 @@
 ### Adding pipes
 
-We add pipes to tranform what we display within the html code.
+We add pipes to transform what we display within the html code.
 
 Angular has some pre built-in pipes which you can find <a href="https://angular.io/guide/pipes#built-in-pipes" targer="_blank">here</a>
 
