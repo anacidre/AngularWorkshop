@@ -244,7 +244,7 @@ Now we make it look pretty in `welcome-nav.component.scss`;
 
 ```
 
-And remove some margin from the coffee-app.component.scss: 
+And remove some margin from the coffee-menu.component.scss: 
 
 ```
 .coffee-menu {
