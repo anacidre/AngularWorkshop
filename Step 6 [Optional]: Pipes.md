@@ -17,6 +17,6 @@ We'd like to show the currency for the price and total order price, to do so we 
 ```
 
 ```
-<app-order [totalOrder]='total  | currency:"EUR"'></app-order>
+<app-order [totalOrder]="total  | currency:'EUR'"></app-order>
 ```
 <a href="https://github.com/anacidre/AngularWorkshop/blob/master/Step%207%20%5BOptional%5D:%20Services.md">Next: Step 7 [Optional]</a>
