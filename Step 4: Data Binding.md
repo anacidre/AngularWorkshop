@@ -30,9 +30,9 @@ We will add a button that uses event binding in our mat-grid-tile and we will sp
 </div>
 <app-total-order></app-total-order>
 ```
-We can see that we areusing interpolation ` {{coffee.price}}` to access the price of the coffee. We have seen interpolation in previous steps already.
+We can see that we are using interpolation ` {{coffee.price}}` to access the price of the coffee. We have seen interpolation in previous steps already.
 
-The target will be the onClick method that is defined in the coffee-menu.component.ts
+The target will be the onClick method that is defined in the coffee-menu.component.ts. So let's add that before our construtor
 
 ```
 onClick(index) {
@@ -41,7 +41,7 @@ onClick(index) {
 ```
 ### One-way data binding
 
-But that is not really what we want to do, we want to be able to specify how many coffees the user want to order.
+But that is not really what we want to do, we want to be able to specify how many coffees the user wants to order.
 And to do so we will be using one-way data binding. First let's make some changes in the coffee interface and our coffee array. Add the property quantity to the coffee.model.ts:
 
 ```
@@ -84,7 +84,7 @@ We now need to add a quantity to our array of coffees in coffee-menu.component.t
 ```
 
 
-Amend the file coffee-menu.component.html to add an input where the user can introduce the amount of coffees to order and change the button name.
+Amend the file coffee-menu.component.html to add an input where the user can introduce the amount of coffees to order. Change the button name and value.
 
 ```
 <div class="coffee-menu">
@@ -109,7 +109,7 @@ Amend the file coffee-menu.component.html to add an input where the user can int
 <app-total-order></app-total-order>
 ```
 
-Now we need to add our one-way binding `[totalOrder]="total"` to our `<app-total-order>` component like this:
+Now we need to add our one-way data binding `[totalOrder]="total"` to our `<app-total-order>` component like this:
 
 ```
 <app-total-order [totalOrder]="total"></app-total-order>
@@ -120,9 +120,10 @@ We then make the button more visible by adding the following to coffee-menu.comp
 ```
 .mat-button{
     background-color: rgba(255, 255, 255, 0.35);
+    }
 ```
 
-Now we need to re-implement the behaviour when the user clicks on the DONE button:
+Now we need to re-implement the behaviour when the user clicks on the DONE button in the `coffee-menu.component.ts`:
 
 ```
 total: number = 0;
@@ -136,8 +137,7 @@ onClick(index, order) {
 }
 ```
 
-Open the console and you'll see how the value total value changes.
-But the thing that we want to do is pass the order total from the coffee-menu component to the order component, to do so we need to use the decorator '@'Input:
+What we want to do now is pass the order total from the coffee-menu component to the order component, to do so we need to use the decorator '@Input:
 
 ```
 import { Component, OnInit, Input } from '@angular/core';
@@ -173,10 +173,11 @@ ng g c welcome-nav
 
 We add the html to our `welcome-nav.component.html` template:
 ```
-<div>
-  Enter your username: <input [(ngModel)]="username">
-  <br/>
-  <span>Welcome {{ username }} !</span>
+<div class="welcome-nav">
+  <mat-form-field color="accent" class="username-input">
+    Enter your username: <input matInput [(ngModel)]="username" class="orange-underline">
+  </mat-form-field>
+  <div class="username"><span >Welcome {{ username }} !</span></div>
 </div>
 ```
 
@@ -207,7 +208,7 @@ We now have to add this component to our `app.component.html`:
 
 ```
 
-Now we make it look pretty
+Now we make it look pretty in `welcome-nav.component.scss`;
 ```
 .welcome-nav {
   padding: 0 0 0 20px;
