@@ -19,7 +19,7 @@ ng g c total-order
 
 This will create the necessary files for the component in the order folder and also import this component into app.module.ts.
 
-You might notice that angular CLI has created an extra file called `total-order.component.spec.ts` we won't be working with this file it is for testing.
+You might notice that angular CLI has created an extra file called `total-order.component.spec.ts`. We won't be working with this file as it is for testing.
 
 If we add the component at the end of the the coffee-menu.component.html page we can see our footer in the page:
 
@@ -32,7 +32,7 @@ If we add the component at the end of the the coffee-menu.component.html page we
 
 Now let's change the component a little bit so it reflects the information that we want to show to our users.
 
-First let's create an attribute that will contain the final price (order.component.ts).
+First let's create an attribute that will contain the final price (total-order.component.ts) before the constructor.
 
 ```
   totalOrder: number = 0;
@@ -58,7 +58,7 @@ export class TotalOrderComponent implements OnInit {
 }
 
 ```
-We need to modify the html for our order component:
+We need to modify the html for our total-order component:
 
 ```
 <div class="footer">
@@ -66,7 +66,7 @@ We need to modify the html for our order component:
 </div>
 ```
 
-Add finally change the styles in the order.component.scss:
+And finally add the styles in the total-order.component.scss:
 ```
 .footer {
   background-color: #71dad1;
