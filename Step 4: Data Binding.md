@@ -251,7 +251,6 @@ And remove some margin from the coffee-menu.component.scss:
   margin: 1% 10%;
 ```
 YOU'VE FINISHED
-we need to introduce a property binding.
 
 <img src="https://github.com/anacidre/AngularWorkshop/blob/master/assets/minions.gif">
 
