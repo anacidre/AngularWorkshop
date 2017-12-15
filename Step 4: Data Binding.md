@@ -43,10 +43,10 @@ onClick(index) {
   this.coffees[index].price = 0.00;
 }
 ```
-### One-way data binding
+### Property binding
 
 But that is not really what we want to do, we want to be able to specify how many coffees the user wants to order.
-And to do so we will be using one-way data binding. First let's make some changes in the coffee interface and our coffee array. Add the property quantity to the coffee.model.ts:
+And to do so we will be using property binding. First let's make some changes in the coffee interface and our coffee array. Add the property quantity to the coffee.model.ts:
 
 ```
 export interface Coffee {
