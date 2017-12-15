@@ -2,7 +2,7 @@
 
 At the end of this section we should have developed a new component for the footer that shows the total price:
 
-![picture](https://github.com/anacidre/AngularWorkshop/blob/master/assets/step3.jpg)
+![picture](https://github.com/anacidre/AngularWorkshop/blob/master/assets/step3.png)
 
 For now, the price will be a static value, but in the next section will see how this value can be updated depending on the coffees purchased by the client.
 
