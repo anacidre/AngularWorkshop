@@ -4,25 +4,29 @@ You can use Angular data bindings to respond to any DOM event. There are four di
 
 - <b>Interpolation:</b> With interpolation you can display a component property. To do so, you put the property name in the view template,       enclosed in double curly braces: `{{coffee.price}}`
 
-- <b>One-way binding:</b> People often describe property binding as one-way data binding because it flows a value in one direction, from a       component's data property into a target element property. Which is what we are going to do next. We use square brackers to access         the property name like this: `[totalOrder]="total"`
+- <b>Property binding:</b> It flows a value in one direction, from a component's data property into a target element property. Which is what we are going to do next. We use square brackers to access the property name like this: `[totalOrder]="total"`
+
+- <b>Event binding:</b> Users don't just stare at the screen. They enter text into input boxes. They pick items from lists. They click           buttons. Such user actions may result in a flow of data in the opposite direction: from an element to a component. To do this we use       the parenthesis `()` to access a DOM event name. You can see this here: `<button mat-button (click)="onClick(i)">FREE</button>`
 
 - <b>Two-way binding:</b> You often want to both display a data property and update that property when the user makes changes.
        We can use `[(ngModel)]` or a `#`. We will go more into detail once we get there.
-       
-- <b>Event binding:</b> Users don't just stare at the screen. They enter text into input boxes. They pick items from lists. They click           buttons. Such user actions may result in a flow of data in the opposite direction: from an element to a component. To do this we use       the parenthesis `()` to access a DOM event name. You can see this here: `<button mat-button (click)="onClick(i)">FREE</button>`
- 
+
 Let's add a button to our coffee-menu component, the idea is that when the user clicks on that button the price of that coffee is updated to 0.00.
 
 ### Interpolation and Event binding
 
-We will add a button that uses event binding in our mat-grid-tile and we will specify the target when the button is clicked. We also need to add an index to our ngFor:
+We will add a button that uses event binding in our mat-grid-tile and we will specify the target when the button is clicked.
+
+<img src="https://github.com/anacidre/AngularWorkshop/blob/master/assets/freeCoffee.png">
+
+First we'll need to add an index to our ngFor:
 
 ```
 
     <mat-grid-tile class="coffee-tile" *ngFor="let coffee of coffees; let i=index">
       <div class="coffee-image">
        ...
-       
+
         <span mat-line>Price: {{coffee.price}}</span>
         <button mat-button (click)="onClick(i)">FREE</button>
       </div>
@@ -32,7 +36,7 @@ We will add a button that uses event binding in our mat-grid-tile and we will sp
 ```
 We can see that we are using interpolation ` {{coffee.price}}` to access the price of the coffee. We have seen interpolation in previous steps already.
 
-The target will be the onClick method that is defined in the coffee-menu.component.ts. So let's add that before our construtor
+The target will be the onClick method that is defined in the coffee-menu.component.ts. So let's add that before our constructor
 
 ```
 onClick(index) {
@@ -137,7 +141,7 @@ onClick(index, order) {
 }
 ```
 
-What we want to do now is pass the order total from the coffee-menu component to the order component, to do so we need to use the decorator '@Input:
+What we want to do now is pass the order total from the coffee-menu component to the order component, to do so we need to use the decorator `@Input`, that will be imported as well in the component:
 
 ```
 import { Component, OnInit, Input } from '@angular/core';
@@ -162,7 +166,7 @@ Let's welcome our users! We will add an input box where the user can add his or 
 
 <img src="https://github.com/anacidre/AngularWorkshop/blob/master/assets/welcome-nav.jpg">
 
-We will be using the `[(ngModel)]` directive to implement this. The `[(ngModel)]` takes care of updating the underlying input DOM  element. 
+We will be using the `[(ngModel)]` directive to implement this. The `[(ngModel)]` takes care of updating the underlying input DOM  element.
 
 
 First we will create a component
@@ -197,7 +201,7 @@ imports: [
     MatFormFieldModule,
     FormsModule
   ],
-  
+
 ```
 
 We now have to add this component to our `app.component.html`:
@@ -244,7 +248,7 @@ Now we make it look pretty in `welcome-nav.component.scss`;
 
 ```
 
-And remove some margin from the coffee-menu.component.scss: 
+And remove some margin from the coffee-menu.component.scss:
 
 ```
 .coffee-menu {
@@ -255,4 +259,3 @@ YOU'VE FINISHED
 <img src="https://github.com/anacidre/AngularWorkshop/blob/master/assets/minions.gif">
 
 but if you want to learn more check out steps <a href="https://github.com/anacidre/AngularWorkshop/blob/master/Step%205%20%5BOptional%5D:%20ngClass.md">5</a>, <a href="https://github.com/anacidre/AngularWorkshop/blob/master/Step%206%20%5BOptional%5D:%20Pipes.md">6</a> and <a href="https://github.com/anacidre/AngularWorkshop/blob/master/Step%207%20%5BOptional%5D:%20Services.md">7</a>.
-

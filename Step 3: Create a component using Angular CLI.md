@@ -2,7 +2,7 @@
 
 At the end of this section we should have developed a new component for the footer that shows the total price:
 
-![picture](https://github.com/anacidre/AngularWorkshop/blob/master/assets/coffee-app-footer-selection.jpg)
+![picture](https://github.com/anacidre/AngularWorkshop/blob/master/assets/step3.jpg)
 
 For now, the price will be a static value, but in the next section will see how this value can be updated depending on the coffees purchased by the client.
 
@@ -92,4 +92,3 @@ Angular makes things work easily, it's a bit like:
 <img src="https://github.com/anacidre/AngularWorkshop/blob/master/assets/mgc.gif">
 
 <a href="https://github.com/anacidre/AngularWorkshop/blob/master/Step%204:%20Data%20Binding.md">Next: Step 4</a>
-

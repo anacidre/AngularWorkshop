@@ -1,14 +1,14 @@
-## Setting up our coffee menu 
+## Setting up our coffee menu
 
 Now that we have set up our first Angular app, we will start making changes to develop the coffee app.
 
-We will start developing our app, for now we will focus just on the menu that shows the different types of coffee that can be ordered from the store. 
+We will start developing our app, for now we will focus just on the menu that shows the different types of coffee that can be ordered from the store.
 
-At the end of this section we will have built the skeleton for the section highlighted in blue below:
+At the end of this section we will have built the skeleton for the section shown below:
 
-<img src="https://github.com/anacidre/AngularWorkshop/blob/master/assets/coffee-app-menu-selection.jpg">
+<img src="https://github.com/anacidre/AngularWorkshop/blob/master/assets/step2.png">
 
-Apps are a representation of the data we can supply and send to our users, and our users can engage with our app to send us data back to a server, for example. 
+Apps are a representation of the data we can supply and send to our users, and our users can engage with our app to send us data back to a server, for example.
 
 1. Here’s the data set we’ll be using:
 
@@ -25,7 +25,7 @@ coffees: Coffee[] = [
       price: 2.50
     },
     {
-      name: 'CaramelMachiato',
+      name: 'Caramel Machiato',
       image: '/assets/images/caramelMachiato.png',
       price: 3.00
     },
@@ -119,7 +119,7 @@ export class CoffeeMenuComponent implements OnInit {
       price: 2.50
     },
     {
-      name: 'CaramelMachiato',
+      name: 'Caramel Machiato',
       image: '/assets/images/caramelMachiato.png',
       price: 3.00
     },
@@ -198,7 +198,7 @@ In our template we'll be using angular material, it needs to be installed using 
 npm install @angular/material@latest --save
 npm install @angular/cdk@latest --save
 ```
-We now need to add Angular material to our module. So just where we were in app.module.ts we need to import: 
+We now need to add Angular material to our module. So just where we were in app.module.ts we need to import:
 ```
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatGridListModule } from '@angular/material/grid-list';
@@ -217,7 +217,7 @@ and add these to imports:
     MatInputModule,
     MatFormFieldModule
   ],
-  
+
 ```
 
 You app.module.ts file should look like this:
