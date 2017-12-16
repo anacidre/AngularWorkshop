@@ -148,8 +148,8 @@ import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
   selector: 'app-order',
-  templateUrl: './order.component.html',
-  styleUrls: ['./order.component.scss']
+  templateUrl: './total-order.component.html',
+  styleUrls: ['./totalorder.component.scss']
 })
 export class OrderComponent implements OnInit {
   @Input() totalOrder: number;
@@ -253,6 +253,7 @@ And remove some margin from the coffee-menu.component.scss:
 ```
 .coffee-menu {
   margin: 1% 10%;
+  }
 ```
 YOU'VE FINISHED
 
