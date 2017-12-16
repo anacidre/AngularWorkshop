@@ -256,6 +256,4 @@ And remove some margin from the coffee-menu.component.scss:
 ```
 YOU'VE FINISHED
 
-<img src="https://github.com/anacidre/AngularWorkshop/blob/master/assets/minions.gif">
-
 but if you want to learn more check out steps <a href="https://github.com/anacidre/AngularWorkshop/blob/master/Step%205%20%5BOptional%5D:%20ngClass.md">5</a>, <a href="https://github.com/anacidre/AngularWorkshop/blob/master/Step%206%20%5BOptional%5D:%20Pipes.md">6</a> and <a href="https://github.com/anacidre/AngularWorkshop/blob/master/Step%207%20%5BOptional%5D:%20Services.md">7</a>.
