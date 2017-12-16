@@ -320,7 +320,7 @@ Let's see where we are with our app and serve it.
 
 GREAT! Let's add some finishing touches:
 
-Add a background colour, an angular material theme and the Google Fonts that we will be using to the app in `app/styles.scss`. We are also going to prepare the app for the footer:
+Add a background colour, an angular material theme and the Google Fonts that we will be using to the app in `src/styles.scss`. We are also going to prepare the app for the footer:
 ```
 @import '~@angular/material/prebuilt-themes/pink-bluegrey.css';
 @import url('https://fonts.googleapis.com/css?family=Pacifico');
