@@ -5,7 +5,7 @@ First we need to add a service. Inside coffee-order-app/src/app we create a file
 export class CoffeeTypesService {
   constructor() {}
 
-  getCoffees() Coffee[] {
+  getCoffees(): Coffee[] {
 }
 }
 
@@ -25,7 +25,7 @@ providers: [
 We then go to our coffee-menu.component.ts and copy the array to add it to our coffee-type.service.ts we will add it in the getCoffees function like this:
 
 ```
-  getCoffees() Coffee[] {
+  getCoffees(): Coffee[] {
 
     return [
           {
