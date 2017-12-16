@@ -149,9 +149,9 @@ import { Component, OnInit, Input } from '@angular/core';
 @Component({
   selector: 'app-order',
   templateUrl: './total-order.component.html',
-  styleUrls: ['./totalorder.component.scss']
+  styleUrls: ['./total-order.component.scss']
 })
-export class OrderComponent implements OnInit {
+export class TotalOrderComponent implements OnInit {
   @Input() totalOrder: number;
 
   constructor() { }
