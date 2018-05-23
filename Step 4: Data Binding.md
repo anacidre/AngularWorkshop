@@ -148,7 +148,7 @@ import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
   selector: 'app-order',
-  templateUrl: './total-order.component.html',
+  template: `total-order works!`,
   styleUrls: ['./total-order.component.scss']
 })
 export class TotalOrderComponent implements OnInit {
@@ -175,7 +175,7 @@ First we will create a component
 ng g c welcome-nav  
 ```
 
-We add the html to our `welcome-nav.component.html` template:
+We add the html to our `welcome-nav.component.ts` template:
 ```
 <div class="welcome-nav">
   <mat-form-field color="accent" class="username-input">
@@ -204,7 +204,7 @@ imports: [
 
 ```
 
-We now have to add this component to our `app.component.html`:
+We now have to add this component to our `app.component.ts`:
 ```
 ...
 <app-welcome-nav></app-welcome-nav>
