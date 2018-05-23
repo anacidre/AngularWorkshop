@@ -310,7 +310,7 @@ Inside coffee-menu.component.scss we will add the necessary styles for this part
 
 ```
 
-Finally let's modify the file app.component.html to reference the coffee-menu component (we can delete everything that is in there):
+Finally let's modify the file app.component.ts to reference the coffee-menu component (we can delete everything that is in there):
 
 ```
 <coffee-menu></coffee-menu>
