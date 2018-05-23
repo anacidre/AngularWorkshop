@@ -310,10 +310,10 @@ Inside coffee-menu.component.scss we will add the necessary styles for this part
 
 ```
 
-Finally let's modify the file app.component.ts to reference the coffee-menu component (we can delete everything that is in there):
+Finally let's modify the file app.component.ts to reference the coffee-menu component (we can delete everything that is in the template inside the ts):
 
 ```
-<coffee-menu></coffee-menu>
+template: `<coffee-menu></coffee-menu>`
 ```
 
 Let's see where we are with our app and serve it.
