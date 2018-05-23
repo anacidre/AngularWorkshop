@@ -44,7 +44,7 @@ import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-total-order',
-  templateUrl: './total-order.component.html',
+  template: `total-order works!`,
   styleUrls: ['./total-order.component.scss']
 })
 export class TotalOrderComponent implements OnInit {
